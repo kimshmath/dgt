@@ -130,6 +130,13 @@
             color: var(--accent);
         }
 
+        .organizers-links {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+            gap: 0.35rem 1.1rem;
+        }
+
         /* ── Hero ────────────────────────────────── */
         .kicker {
             font-size: 0.7rem;
@@ -174,15 +181,18 @@
 
         /* ── Upcoming note ───────────────────────── */
         .upcoming {
+            margin: 2.75rem 0 0;
+            padding: 1.15rem 1.4rem 1.3rem;
+            background: linear-gradient(135deg, rgba(108, 155, 255, 0.07), rgba(108, 155, 255, 0.02));
+            border: 1px solid rgba(108, 155, 255, 0.18);
+            border-radius: 12px;
+        }
+
+        .upcoming .headline {
             display: flex;
             align-items: baseline;
             gap: 0.75rem;
             flex-wrap: wrap;
-            margin: 2.75rem 0 0;
-            padding: 1.1rem 1.35rem;
-            background: linear-gradient(135deg, rgba(108, 155, 255, 0.07), rgba(108, 155, 255, 0.02));
-            border: 1px solid rgba(108, 155, 255, 0.18);
-            border-radius: 12px;
         }
 
         .upcoming .badge {
@@ -203,6 +213,37 @@
         .upcoming .when {
             font-size: 0.85rem;
             color: var(--text-muted);
+        }
+
+        .upcoming .speakers-line {
+            margin-top: 0.7rem;
+            padding-top: 0.7rem;
+            border-top: 1px solid rgba(108, 155, 255, 0.12);
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            line-height: 1.9;
+        }
+
+        .upcoming .speakers-line .label {
+            font-size: 0.68rem;
+            font-weight: 500;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            opacity: 0.75;
+            margin-right: 0.35rem;
+        }
+
+        .upcoming .speakers-line a {
+            color: var(--text-main);
+            text-decoration: none;
+            border-bottom: 1px solid rgba(108, 155, 255, 0.3);
+            transition: color 0.2s ease, border-color 0.2s ease;
+        }
+
+        .upcoming .speakers-line a:hover {
+            color: var(--accent);
+            border-color: var(--accent);
         }
 
         /* ── Timeline ────────────────────────────── */
@@ -421,7 +462,10 @@
     <div class="container">
         <nav class="topbar">
             <a href="/" class="wordmark">Dynamical Group Theory</a>
-            <a href="https://me.kimsh.kr/" target="_blank" rel="noopener">Sang-hyun Kim ↗</a>
+            <span class="organizers-links">
+                <a href="https://inhyeokchoi48.github.io/" target="_blank" rel="noopener">Inhyeok Choi ↗</a>
+                <a href="https://me.kimsh.kr/" target="_blank" rel="noopener">Sang-hyun Kim ↗</a>
+            </span>
         </nav>
 
         <header>
@@ -430,12 +474,26 @@
             <p class="lede">A series of workshops on <em>group actions, dynamics, and geometry</em> —
                 bringing together researchers in geometric group theory, low-dimensional topology, and
                 dynamical systems, at KIAS and partner institutions around the world.</p>
-            <p class="organizer">Organized by Inhyeok Choi and Sang-hyun Kim (KIAS), with collaborators in Korea, France, Chile, and the US.</p>
+            <p class="organizer">Steered by Inhyeok Choi and Sang-hyun Kim (KIAS), with co-organizers in Korea, France, Chile, and the US.</p>
 
             <div class="upcoming">
-                <span class="badge">Upcoming</span>
-                <span class="what">Dynamical Group Theory</span>
-                <span class="when">Seoul, Korea · November 11 – 13, 2026</span>
+                <p class="headline">
+                    <span class="badge">Upcoming</span>
+                    <span class="what">Dynamical Group Theory</span>
+                    <span class="when">Seoul, Korea · November 9 – 13, 2026</span>
+                </p>
+                <p class="speakers-line">
+                    <span class="label">Confirmed speakers</span>
+                    <a href="https://perso.univ-rennes1.fr/victor.kleptsyn/" target="_blank" rel="noopener">Victor
+                        Kleptsyn</a>,
+                    <a href="https://www.fing.edu.uy/es/node/41160" target="_blank" rel="noopener">Joaquín Brum</a>,
+                    <a href="https://www.dmcc.usach.cl/personas/andres-navas-flores/" target="_blank"
+                        rel="noopener">Andrés Navas</a>,
+                    <a href="https://www.fffmaths.com/" target="_blank" rel="noopener">Francesco
+                        Fournier-Facio</a>,
+                    <a href="https://cyagm.cnrs.fr/membres/bertrand-deroin/" target="_blank" rel="noopener">Bertrand
+                        Deroin</a>, and more to be announced.
+                </p>
             </div>
         </header>
 
