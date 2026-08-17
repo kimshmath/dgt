@@ -2,8 +2,22 @@
 
 This repository hosts **https://dgt.ggt.kr** via GitHub Pages.
 
-The site is a single self-contained page: [`index.html`](index.html) (all CSS/JS inline,
-no build step). **Any push to `main` deploys automatically** within a minute or two.
+No build step — plain HTML/CSS. **Any push to `main` deploys automatically** within a
+minute or two.
+
+- [`index.html`](index.html) — the landing page: hero (with the Penrose P3 canvas
+  animation) and the timeline of every edition. All CSS/JS inline.
+- `dgt1/`, `dgt3/`, `dgt4/` — per-event pages for editions whose original websites went
+  offline, rebuilt from the organizers' own records. They share [`event.css`](event.css).
+- Editions with a live website of their own (II, V, VI, VII, VIII) link straight to it
+  from the timeline instead of having a page here.
+
+## How to add a page for an event
+
+Copy `dgt4/index.html` to a new folder (e.g. `dgt9/index.html`) and edit the hero,
+`Program`, `Organizers`, and `Sponsors` blocks. Keep `<link rel="stylesheet"
+href="../event.css">` as is, then point that edition's timeline link at `dgt9/`
+with the label `Details →`.
 
 ## How to add a new event
 
@@ -26,8 +40,8 @@ Copy an existing `<li class="event">` block and edit it:
 
 - Keep the list in **reverse-chronological order** (newest at the top).
 - `event-theme` is optional — delete the line if the edition has no separate theme.
-- For a dead/offline event page, link a Wayback Machine snapshot instead and use
-  `class="event-link archived"` with the label `Archived site ↗`.
+- For an event with no live website, build a page here (see below) and link it as
+  `<a class="event-link" href="dgtN/">Details →</a>`.
 - The **Upcoming** banner is the `<div class="upcoming">` block near the top —
   update it when the next edition is announced, and move the previous "upcoming"
   event into the timeline once it has taken place.
