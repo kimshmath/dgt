@@ -231,12 +231,12 @@ a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-
   #lace { transition: none; }
 }
 
-/* ---------- print: one poster = one page (A3; change the @page size below for A2 or A4) ---------- */
+/* ---------- print: one poster = one page (A2; change the @page size below for A3 or A4) ---------- */
 @media print {
-  @page { size: 297mm 420mm; margin: 0; }
-  html, body { width: 297mm; height: 420mm; margin: 0; padding: 0; background: var(--bg) !important; display: block; overflow: visible; }
+  @page { size: 420mm 594mm; margin: 0; }
+  html, body { width: 420mm; height: 594mm; margin: 0; padding: 0; background: var(--bg) !important; display: block; overflow: visible; }
   .ambient { display: none !important; }
-  .poster { --cq: 1cqw; width: 297mm; height: 420mm; max-width: none; margin: 0; background: var(--bg); }
+  .poster { --cq: 1cqw; width: 420mm; height: 594mm; max-width: none; margin: 0; background: var(--bg); }
   .poster-in { position: absolute; inset: 0; grid-template-rows: auto minmax(0, 1fr) auto auto; padding: calc(5.2*var(--cq)) calc(5.6*var(--cq)) calc(4.2*var(--cq)); }
   .stage { height: 100%; min-height: 0; padding: calc(2*var(--cq)) 0 calc(1.4*var(--cq)); }
   .disk { width: auto; height: 100%; max-height: calc(64*var(--cq)); max-width: 100%; }
@@ -706,7 +706,7 @@ function preparePrint() {
   if (printReady || !L) return;
   if (useGL && laceReady) {
     try {
-      const S = Math.min(2600, gl.getParameter(gl.MAX_RENDERBUFFER_SIZE) || 2600);
+      const S = Math.min(3400, gl.getParameter(gl.MAX_RENDERBUFFER_SIZE) || 3400);
       const oldW = W;
       laceEl.width = laceEl.height = S; W = H = S; CX = CY = S / 2; R = S / 2;
       drawLaceGL(0, 1);
