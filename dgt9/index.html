@@ -35,7 +35,7 @@
   --bg-page: #030305;       /* page behind the poster */
   --fg: #f1e9d9;            /* warm ivory text */
   --muted: #a3acbe;         /* secondary text */
-  --dim: #6b7488;           /* tertiary text */
+  --dim: #7b8498;           /* tertiary text */
   --accent: #7fa8ff;        /* series blue */
   --accent-2: #ffcf8a;      /* comet gold */
   --rule: rgba(241, 233, 217, 0.14);
@@ -248,6 +248,42 @@ a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-
   .rotor:has(img[src]) svg { display: none !important; }
   .disk, .head, .info, .foot { animation: none !important; opacity: 1 !important; transform: none !important; }
   * { print-color-adjust: exact !important; -webkit-print-color-adjust: exact !important; }
+
+  /* ink-friendly contrast: on a solid dark ground, thin or dim type is what dot gain eats first,
+     so in print every text role gets a brighter colour, a heavier weight and a larger minimum size */
+  .poster { --muted: #cdd3de; --dim: #aab2c2; --rule: rgba(241,233,217,.32); }
+  .kicker { font-weight: 600; font-size: calc(1.4*var(--cq)); letter-spacing: .3em; }
+  .title { font-weight: 500; }
+  .title .num { font-weight: 400; }
+  .lede { font-weight: 400; color: #d9dde6; }
+  .date-days { font-weight: 400; }
+  .date-month { font-weight: 500; }
+  .date-venue { font-size: calc(1.5*var(--cq)); font-weight: 500; }
+  .stage-side { font-size: calc(1.36*var(--cq)); font-weight: 500; width: calc(17*var(--cq)); }
+  .stage-side b { font-size: calc(1.2*var(--cq)); font-weight: 600; color: var(--fg); }
+  .stage-side em { font-size: calc(1.55*var(--cq)); color: var(--fg); }
+  .label { font-size: calc(1.32*var(--cq)); font-weight: 600; color: #9fbcff; }
+  .names li { font-weight: 600; font-size: calc(1.78*var(--cq)); }
+  .names li span { font-weight: 500; font-size: calc(1.4*var(--cq)); }
+  .names.big li { font-weight: 600; }
+  .names.big li span { font-size: calc(1.34*var(--cq)); font-weight: 500; }
+  .orgs { font-weight: 500; font-size: calc(1.5*var(--cq)); }
+  .orgs span { font-size: calc(1.4*var(--cq)); font-weight: 500; }
+  .tt { font-weight: 500; font-size: calc(1.52*var(--cq)); }
+  .tt th { font-size: calc(1.28*var(--cq)); font-weight: 500; }
+  .tt td { border-bottom-color: rgba(241,233,217,.2); }
+  .tt .day { font-weight: 600; }
+  .tt .day small { font-size: calc(1.15*var(--cq)); font-weight: 500; }
+  .tt .free { color: var(--muted); }
+  .tt .mini { color: #9fbcff; font-weight: 600; }
+  .ttnote { font-size: calc(1.4*var(--cq)); font-weight: 500; }
+  .ttnote b { color: var(--fg); }
+  .support p { font-size: calc(1.46*var(--cq)); font-weight: 500; max-width: calc(66*var(--cq)); }
+  .support p b { font-weight: 600; }
+  .url { font-weight: 500; font-size: calc(1.55*var(--cq)); }
+  .url.dim { font-size: calc(1.4*var(--cq)); color: var(--muted); }
+  .url .k { font-size: calc(1.18*var(--cq)); font-weight: 600; }
+  .ring { border-color: rgba(179,200,255,.7); }
 }
 </style>
 
